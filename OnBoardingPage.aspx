@@ -406,8 +406,16 @@
                             </div>
                         </div>
                         <div  class="form-group">
-<button type="button" style="width:40%" class="btn btn-success">Submit</button>
-<button type="button" style="width:40%" class="btn btn-danger">Reset</button>
+
+                          <%--  <a style="width:50%" href="https://prod-19.centralus.logic.azure.com:443/workflows/11f10a19a36641f898619f931695c6a2/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=jtdCXT_wmaTuZgIGeWGIIGArEdtHsg2YmrCEegs27ik" class="btn btn-google btn-user btn-block">
+                                             Submit
+                                        </a>--%>
+                            <form action="/OnBoardingPase.aspx" method="get">
+                            <button type="submit" formmethod="post" 
+                                formaction="https://prod-19.centralus.logic.azure.com:443/workflows/11f10a19a36641f898619f931695c6a2/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=jtdCXT_wmaTuZgIGeWGIIGArEdtHsg2YmrCEegs27ik"
+                                style="width:40%" class="btn btn-success">Submit</button>
+                                </form>
+
                         </div>
                         </div>
                     
