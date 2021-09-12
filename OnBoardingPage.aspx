@@ -514,7 +514,7 @@
                                     Preview On Boarding Form
                                 </button>
 
-                              <asp:Button ID="Button1" Style="width: 40%" class="btn btn-success" runat="server" Text="Post Data" OnClick="btnSubmit_Click1" />
+                            
 
 
                             </div>
@@ -649,8 +649,8 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         
-                        <%--<asp:Button ID="btnSubmitClick" Style="width: 40%" class="btn btn-success" runat="server" Text="Post Data" OnClick="btnSubmit_Click1" />
-                     --%>  
+                        <asp:Button ID="btnSubmitClick" UseSubmitBehavior="false" Style="width: 40%" class="btn btn-success" runat="server" Text="Post Data" OnClick="btnSubmit_Click1" />
+                       
                      <%--   <button type="button" class="btn btn-primary">Save changes</button>--%>
                     </div>
                 </div>
