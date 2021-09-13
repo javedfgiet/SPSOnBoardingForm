@@ -68,7 +68,7 @@
 
             var listConsideredDataTypes = document.getElementById('listConsideredDataTypes');
             var modeltxtAreaDataTypes = document.getElementById('modeltxtAreaDataTypes');
-            modeltxtAreaDataTypes.value = listConsideredDataTypes.value;
+            modeltxtAreaDataTypes.value = listConsideredDataTypes.options[listConsideredDataTypes.selectedIndex].text;
 
             var txtAreaDetailedScenario = document.getElementById('txtAreaDetailedScenario');
             var modeltxtDetailedScenario = document.getElementById('modeltxtDetailedScenario');
@@ -411,11 +411,15 @@
                                             <h6 class="m-0 font-weight-bold text-primary">What Data Types are being considered for use ?</h6>
                                         </div>
                                         <div class="card-body">
-                                            <select class="form-select" id="listConsideredDataTypes" size="3" aria-label="size 3 select example">
-                                                <option selected>Open this select menu</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                            <select class="form-select" id="listConsideredDataTypes" size="7" aria-label="size 7 select example">
+                                                <option selected>Choose Data Types</option>
+                                                <option value="1">Web</option>
+                                                <option value="2">Video</option>
+                                                <option value="3">Images</option>
+                                                <option value="4">Related Queries</option>
+                                                <option value="5">Spelling Suggestion for query term</option>
+                                                <option value="6">Ads</option>
+                                                <option value="7">Others(Auto Suggest, Local, etc)</option>
                                             </select>
                                         </div>
 
