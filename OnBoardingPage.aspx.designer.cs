@@ -33,15 +33,6 @@ namespace OnBoardingForm
         protected global::System.Web.UI.HtmlControls.HtmlInputText modeltxtTeamName;
 
         /// <summary>
-        /// modeltxtUserName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText modeltxtUserName;
-
-        /// <summary>
         /// modeltxtPartnerAlias control.
         /// </summary>
         /// <remarks>
@@ -69,6 +60,15 @@ namespace OnBoardingForm
         protected global::System.Web.UI.HtmlControls.HtmlInputText modelTxtTeamEmail;
 
         /// <summary>
+        /// modeltxtExternalPartnerAlias control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText modeltxtExternalPartnerAlias;
+
+        /// <summary>
         /// modeltxtProjectOverview control.
         /// </summary>
         /// <remarks>
@@ -76,6 +76,15 @@ namespace OnBoardingForm
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea modeltxtProjectOverview;
+
+        /// <summary>
+        /// modelTargetDevice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText modelTargetDevice;
 
         /// <summary>
         /// modelTxtDate control.
@@ -148,24 +157,6 @@ namespace OnBoardingForm
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText modelTxtFormCode;
-
-        /// <summary>
-        /// modelTargetDevice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText modelTargetDevice;
-
-        /// <summary>
-        /// IfOtherPleaseSpecify control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText IfOtherPleaseSpecify;
 
         /// <summary>
         /// modeltxtDetailedScenario control.

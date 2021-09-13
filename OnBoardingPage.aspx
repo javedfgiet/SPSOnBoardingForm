@@ -28,9 +28,9 @@
             var modeltxtTeamName = document.getElementById('modeltxtTeamName');
             modeltxtTeamName.value = txtTeamName.value;
 
-            var txtUserName = document.getElementById('txtUserName');
-            var modeltxtUserName = document.getElementById('modeltxtUserName');
-            modeltxtUserName.value = txtUserName.value;
+            var txtExternalPartner = document.getElementById('txtExternalPartner');
+            var modeltxtExternalPartnerAlias = document.getElementById('modeltxtExternalPartnerAlias');
+            modeltxtExternalPartnerAlias.value = txtExternalPartner.value;
 
 
             var txtPartnerContactName = document.getElementById('txtPartnerContactName');
@@ -49,6 +49,25 @@
             var txtAreaProjectOverView = document.getElementById('txtAreaProjectOverView');
             var modeltxtProjectOverview = document.getElementById('modeltxtProjectOverview');
             modeltxtProjectOverview.value = txtAreaProjectOverView.value;
+
+
+
+            var targetDevices = "";
+            if (document.getElementById("chkDeskTop").checked = true) {
+                targetDevices = "Desktop";
+            }
+            if (document.getElementById("chkMobile").checked == true) {
+                targetDevices = targetDevices + ',\n' + " Mobile";
+            }
+            if (document.getElementById("chkotherDevice").checked == true) {
+                targetDevices = targetDevices + ',\n' + " Other Devices : \n " + document.getElementById('txtOtherDevice').value;
+            }
+            var modelTargetDevice = document.getElementById('modelTargetDevice');
+            modelTargetDevice.value = targetDevices;
+
+
+
+
 
             var modelTxtDate = document.getElementById('modelTxtDate');
             var txtDate = document.getElementById('txtDate');
@@ -121,15 +140,15 @@
 
             IfOtherPleaseSpecify.value = BingAPICalledAt;
 
-            var AppIdPresent = "";
-            var modelTxtFormCode = document.getElementById('modelTxtFormCode');
+            var AppIdPresent = ""; 
             if (document.getElementById("rbAppIdYes").checked == true) {
                 AppIdPresent = "Yes";
             }
-            else if (document.getElementById("rbAppIdNo").checked == true) {
+            else {
                 AppIdPresent = "No";
             }
-            modelTxtFormCode.value = AppIdPresent;
+            var modelFormCode = document.getElementById('modelTxtFormCode');
+            modelFormCode.value = AppIdPresent;
 
 
         }
@@ -276,34 +295,79 @@
 
 
                                 <div class="form-group">
-
                                     <input type="text" class="form-control form-control-user"
                                         id="txtTeamName" placeholder="Team Name & Division">
                                 </div>
-                                <div class="form-group">
 
+                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user"
-                                        id="txtUserName" placeholder="User Name">
+                                        id="txtPartnerContactName" placeholder="Panrtner Contact Microsoft Alias">
                                 </div>
-                                <div class="form-group">
 
+                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user"
-                                        id="txtPartnerContactName" placeholder="Panrtner Contact Name">
+                                        id="txtSearhTeamContact" placeholder="POC Email Address (Search Team Contact)">
                                 </div>
-                                <div class="form-group">
+                                 <div class="form-group">
+                                    <input type="text" class="form-control form-control-user"
+                                        id="txtTeamAlias" placeholder="Team Alias Email">
+                                </div>
 
-                                    <input type="text" class="form-control form-control-user"
-                                        id="txtSearhTeamContact" placeholder="Search Team Contact">
-                                </div>
                                 <div class="form-group">
-
                                     <input type="text" class="form-control form-control-user"
-                                        id="txtTeamAlias" placeholder="Team Alias">
+                                        id="txtExternalPartner" placeholder="External partner email alias">
                                 </div>
+                               
+                               
+                               
                                 <div class="form-group">
 
                                     <textarea class="form-control" rows="5" placeholder="Project Overview" id="txtAreaProjectOverView"></textarea>
                                 </div>
+
+
+                                
+                                <div class="form-group">
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-primary">Target Device</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" id="chkDeskTop" value="">Desktop</label>
+                                            </div>
+
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" id="chkMobile" value="">Mobile</label>
+                                            </div>
+                                            
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" id="chkotherDevice" value="">Others Device </label>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <a href="#" class="btn btn-primary btn-icon-split btn-sm">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-flag"></i>
+                                                    </span>
+                                                    <span class="text">If Other, Please specify</span>
+                                                </a>
+                                                <input type="text" class="form-control form-control-user"
+                                                    id="txtOtherDevice" placeholder="Other Device">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
 
                                 <div class="form-group">
 
@@ -553,44 +617,49 @@
 
 
                         <div class="form-group">
-                            <label for="modeltxtTeamName">Team Name & Organization </label>
-                             <input type="text" class="form-control" runat="server" id="modeltxtTeamName" placeholder="....">
-                            
-                          
+                            <label for="modeltxtTeamName">Team Name & Division </label>
+                             <input type="text" class="form-control" runat="server" id="modeltxtTeamName" placeholder="....">        
                         </div>
 
                         <div class="form-group">
-                            <label for="modeltxtUserName">User Name </label>
-                            
-                            <input type="text" class="form-control" runat="server" id="modeltxtUserName" placeholder="....">
-                          
-                        </div>
-
-                        <div class="form-group">
-                            <label for="modeltxtPartnerAlias">Partner Contact Alias  </label>
-                            
+                            <label for="modeltxtPartnerAlias">Partner Contact Microsoft Alias</label>                           
                              <input type="text" class="form-control" runat="server" id="modeltxtPartnerAlias" placeholder="....">
                           
                         </div>
 
                         <div class="form-group">
-                            <label for="modelSearchTxtTeamEmail">Search Team Contact Alias : </label>
-                           
-
+                            <label for="modelSearchTxtTeamEmail">POC email Address (Search Team Contact)</label>
                             <input type="text" class="form-control" runat="server" id="modelSearchTxtTeamEmail" placeholder="....">
                            
                         </div>
-                        <div class="form-group">
-                            <label for="modelTxtTeamEmail">Team Alias : </label>
+
+                                 <div class="form-group">
+                            <label for="modelTxtTeamEmail">Team Alias (Email)</label>
                            
 
                              <input type="text" class="form-control" runat="server" id="modelTxtTeamEmail" placeholder="....">
                             
+                        </div>                 
+
+                        <div class="form-group">
+                            <label for="modeltxtExternalPartnerAlias">External partner email alias</label>
+                            
+                            <input type="text" class="form-control" runat="server" id="modeltxtExternalPartnerAlias" placeholder="....">
+                          
                         </div>
+                       
+                      
                         <div class="form-group">
                             <label for="modeltxtProjectOverview">Project Overview : </label>
                             
                             <textarea id="modeltxtProjectOverview" runat="server" class="form-control" rows="5" placeholder="......"></textarea>
+                        </div>
+
+
+                          <div class="form-group">
+                            <label for="modelTargetDevice">Target Device : </label>
+                            <input type="text" class="form-control" id="modelTargetDevice" runat="server" placeholder="....">
+                            
                         </div>
 
                         <div class="form-group">
@@ -634,12 +703,7 @@
 
 
 
-                        <div class="form-group">
-                            <label for="modelTargetDevice">Target Device : </label>
-                            <input type="text" class="form-control" id="modelTargetDevice" runat="server" placeholder="....">
-                            <label for="IfOtherPleaseSpecify">Other Target Device : </label>
-                            <input type="text" class="form-control" id="IfOtherPleaseSpecify" runat="server" placeholder="......" />
-                        </div>
+                      
 
 
                         <div class="form-group">

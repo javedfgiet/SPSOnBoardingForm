@@ -26,7 +26,7 @@ namespace OnBoardingForm
         {
 
             var modelTeamName = modeltxtTeamName.Value;
-            var modelUserName = modeltxtUserName.Value;
+            var modelUserName = modeltxtExternalPartnerAlias.Value;
             var modelPartnerAlias = modeltxtPartnerAlias.Value;
             var modelSearchTeamEmail = modelSearchTxtTeamEmail.Value;
             var modelTeamEmail = modelTxtTeamEmail.Value;
@@ -40,7 +40,7 @@ namespace OnBoardingForm
             var modelAreaDataTypes = modeltxtAreaDataTypes.Value;
             var modelFormCode = modelTxtFormCode.Value;
             var modelDevice = modelTargetDevice.Value;
-            var OtherTargetDevice = IfOtherPleaseSpecify.Value;
+           
             var modelDetailedScenario = modeltxtDetailedScenario.Value;
             var myData = new
             {
@@ -59,7 +59,7 @@ namespace OnBoardingForm
                 DataTypesToBeUsed = modelAreaDataTypes,
                 AppIdFormCode = modelFormCode,
                 TargetDevice = modelDevice,
-                OtherTargetDevice = OtherTargetDevice,
+                OtherTargetDevice = modelDevice,
                 DetailedScenario = modelDetailedScenario,
 
 
