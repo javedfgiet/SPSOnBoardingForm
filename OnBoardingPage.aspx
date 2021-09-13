@@ -383,7 +383,7 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="form-group">
-                                                <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                                <a href="https://docs.microsoft.com/en-us/bing/search-apis/bing-web-search/use-display-requirements"  target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                                     <i class="fas fa-download fa-sm text-white-50"></i>Bing Product Guidelines
                                                 </a>
                                             </div>
