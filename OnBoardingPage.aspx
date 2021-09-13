@@ -80,16 +80,16 @@
                 distributionMethod = "Microsoft Internal user only";
             }
             if (document.getElementById("chkMicrosoftenterprise").checked == true) {
-                distributionMethod = distributionMethod + '\n' + "Microsoft enterprise/consumer softwares";
+                distributionMethod = distributionMethod + ',\n' + "Microsoft enterprise/consumer softwares";
             }
             if (document.getElementById("chkSeconParty").checked == true) {
-                distributionMethod = distributionMethod + '\n' + "2nd party, 3 rdparty or OEM services/devices";
+                distributionMethod = distributionMethod + ',\n' + "2nd party, 3 rdparty or OEM services/devices";
             }
             if (document.getElementById("chkPublicdistribution").checked == true) {
-                distributionMethod = distributionMethod + '\n' + "Public distribution of library through Github or similar";
+                distributionMethod = distributionMethod + ',\n' + "Public distribution of library through Github or similar";
             }
             if (document.getElementById("chkotherPackage").checked == true) {
-                distributionMethod = distributionMethod + '\n' + "Other package distribution outside Microsoft : \n" + document.getElementById('txtOtherScenario').value;
+                distributionMethod = distributionMethod + ',\n' + "Other package distribution outside Microsoft : \n" + document.getElementById('txtOtherScenario').value;
             }
             var modeltxtAreaDistribution = document.getElementById('modeltxtAreaDistribution');
             modeltxtAreaDistribution.value = distributionMethod;
@@ -215,21 +215,7 @@
                                     <i class="fas fa-search fa-fw"></i>
                                 </a>
                                 <!-- Dropdown - Messages -->
-                                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                    aria-labelledby="searchDropdown">
-                                    <form class="form-inline mr-auto w-100 navbar-search">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control bg-light border-0 small"
-                                                placeholder="Search for..." aria-label="Search"
-                                                aria-describedby="basic-addon2">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary" type="button">
-                                                    <i class="fas fa-search fa-sm"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
+                                
                             </li>
 
                             <!-- Nav Item - Alerts -->
@@ -564,67 +550,80 @@
 
                         <div class="form-group">
                             <label for="modeltxtTeamName">Team Name & Organization </label>
-                            <input type="text" class="form-control" id="modeltxtTeamName" disabled="disabled" placeholder="......">
+                             <input type="text" class="form-control" runat="server" id="modeltxtTeamName" placeholder="....">
+                            
+                          
                         </div>
 
                         <div class="form-group">
                             <label for="modeltxtUserName">User Name </label>
-                            <input type="text" class="form-control" id="modeltxtUserName" disabled="disabled" placeholder="......">
+                            
+                            <input type="text" class="form-control" runat="server" id="modeltxtUserName" placeholder="....">
+                          
                         </div>
 
                         <div class="form-group">
                             <label for="modeltxtPartnerAlias">Partner Contact Alias  </label>
-                            <input type="text" class="form-control" id="modeltxtPartnerAlias" disabled="disabled" placeholder="......">
+                            
+                             <input type="text" class="form-control" runat="server" id="modeltxtPartnerAlias" placeholder="....">
+                          
                         </div>
 
                         <div class="form-group">
                             <label for="modelSearchTxtTeamEmail">Search Team Contact Alias : </label>
-                            <input type="text" class="form-control" id="modelSearchTxtTeamEmail" disabled="disabled" placeholder="....">
+                           
+
+                            <input type="text" class="form-control" runat="server" id="modelSearchTxtTeamEmail" placeholder="....">
+                           
                         </div>
                         <div class="form-group">
                             <label for="modelTxtTeamEmail">Team Alias : </label>
-                            <input type="text" class="form-control" id="modelTxtTeamEmail" disabled="disabled" placeholder="....">
+                           
+
+                             <input type="text" class="form-control" runat="server" id="modelTxtTeamEmail" placeholder="....">
+                            
                         </div>
                         <div class="form-group">
                             <label for="modeltxtProjectOverview">Project Overview : </label>
-                            <textarea id="modeltxtProjectOverview" class="form-control" disabled="disabled" rows="5" placeholder="......"></textarea>
+                            
+                            <textarea id="modeltxtProjectOverview" runat="server" class="form-control" rows="5" placeholder="......"></textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="modelTxtDate">Date</label>
-                            <input type="text" class="form-control" id="modelTxtDate" disabled="disabled" placeholder="....">
+                            <input type="text" class="form-control" runat="server" id="modelTxtDate" placeholder="....">
                         </div>
 
                         <div class="form-group">
                             <label for="modeltxtAreaDistribution">What is distribution method for your product/service/application : </label>
-                            <textarea id="modeltxtAreaDistribution" class="form-control" disabled="disabled" rows="5" placeholder="......"></textarea>
+                            <textarea id="modeltxtAreaDistribution" class="form-control" runat="server" rows="5" placeholder="......"></textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="modeltxtAreaMarket">Market/countries where List will be shown : </label>
-                            <textarea id="modeltxtAreaMarket" class="form-control" disabled="disabled" rows="5" placeholder="......"></textarea>
+                            <textarea id="modeltxtAreaMarket" class="form-control" runat="server" rows="5" placeholder="......"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="modelTxtQPM">Estimated number of queries per month : </label>
-                            <input type="text" id="modelTxtQPM" class="form-control" disabled="disabled" placeholder="......">
+                            <input type="text" id="modelTxtQPM" class="form-control" runat="server" placeholder="......">
                         </div>
 
                         <div class="form-group">
                             <label for="modelTxtQPS">Estimated number of queries per second : </label>
-                            <input type="text" id="modelTxtQPS" class="form-control" disabled="disabled" placeholder="......">
+                            <input type="text" id="modelTxtQPS" class="form-control" runat="server" placeholder="......">
                         </div>
                         <div class="form-group">
                             <label for="modelTxtImpAdhereTo">Please ensure your implementation adheres to the : </label>
-                            <input type="text" class="form-control" id="modelTxtImpAdhereTo" disabled="disabled" placeholder="....">
+                            <input type="text" class="form-control" id="modelTxtImpAdhereTo" runat="server" placeholder="....">
                         </div>
 
                         <div class="form-group">
                             <label for="modeltxtAreaDataTypes">considered Data types to be used : </label>
-                            <textarea id="modeltxtAreaDataTypes" class="form-control" disabled="disabled" rows="5" placeholder="......"></textarea>
+                            <textarea id="modeltxtAreaDataTypes" class="form-control" runat="server" rows="5" placeholder="......"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="modelTxtFormCode">Do you have AppId and/or Form Code ? : </label>
-                            <input type="text" class="form-control" id="modelTxtFormCode" disabled="disabled" placeholder="....">
+                            <input type="text" class="form-control" id="modelTxtFormCode" runat="server" placeholder="....">
                         </div>
 
 
@@ -633,15 +632,15 @@
 
                         <div class="form-group">
                             <label for="modelTargetDevice">Target Device : </label>
-                            <input type="text" class="form-control" id="modelTargetDevice" disabled="disabled" placeholder="....">
+                            <input type="text" class="form-control" id="modelTargetDevice" runat="server" placeholder="....">
                             <label for="IfOtherPleaseSpecify">Other Target Device : </label>
-                            <input type="text" class="form-control" id="IfOtherPleaseSpecify" disabled="disabled" placeholder="......" />
+                            <input type="text" class="form-control" id="IfOtherPleaseSpecify" runat="server" placeholder="......" />
                         </div>
 
 
                         <div class="form-group">
-                            <label for="modeltxtDetailedScenario">What is distribution method for your product/service/application : </label>
-                            <textarea id="modeltxtDetailedScenario" class="form-control" disabled="disabled" rows="5" placeholder="......"></textarea>
+                            <label for="modeltxtDetailedScenario">Detailed Scenario : </label>
+                            <textarea id="modeltxtDetailedScenario" class="form-control" runat="server" rows="5" placeholder="......"></textarea>
                         </div>
 
 
@@ -651,13 +650,13 @@
                         
                         <asp:Button ID="btnSubmitClick" UseSubmitBehavior="false" Style="width: 40%" class="btn btn-success" runat="server" Text="Post Data" OnClick="btnSubmit_Click1" />
                        
-                     <%--   <button type="button" class="btn btn-primary">Save changes</button>--%>
+                  
                     </div>
                 </div>
             </div>
         </div>
 
-
+         </form>
    
     
 
@@ -677,7 +676,7 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
-     </form>
+    
 </body>
 
 </html>

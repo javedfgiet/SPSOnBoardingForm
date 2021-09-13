@@ -19,17 +19,52 @@ namespace OnBoardingForm
         {
 
         }
-       
 
-        
+
+
         protected void btnSubmit_Click1(object sender, EventArgs e)
         {
+
+            var modelTeamName = modeltxtTeamName.Value;
+            var modelUserName = modeltxtUserName.Value;
+            var modelPartnerAlias = modeltxtPartnerAlias.Value;
+            var modelSearchTeamEmail = modelSearchTxtTeamEmail.Value;
+            var modelTeamEmail = modelTxtTeamEmail.Value;
+            var modelProjectOverview = modeltxtProjectOverview.Value;
+            var modelDate = modelTxtDate.Value;
+            var modelAreaDistribution = modeltxtAreaDistribution.Value;
+            var modelAreaMarket = modeltxtAreaMarket.Value;
+            var modelQPM = modelTxtQPM.Value;
+            var modelQPS = modelTxtQPS.Value;
+            var modelImpAdhereTo = modelTxtImpAdhereTo.Value;
+            var modelAreaDataTypes = modeltxtAreaDataTypes.Value;
+            var modelFormCode = modelTxtFormCode.Value;
+            var modelDevice = modelTargetDevice.Value;
+            var OtherTargetDevice = IfOtherPleaseSpecify.Value;
+            var modelDetailedScenario = modeltxtDetailedScenario.Value;
             var myData = new
             {
-                body = "SPS On boarding Test Mail. please ignore",
-                due = "10/10/2021",
+                TeamName = modelTeamName,
+                UserName = modelUserName,
+                PartnerContactAlias = modelPartnerAlias,
+                SearchTeamContactAlias = modelSearchTeamEmail,
+                TeamAlias = modelTeamEmail,
+                ProjectOverview = modelProjectOverview,
+                Date = modelDate,
+                distributionMethod = modelAreaDistribution,
+                MarketNcountries = modelAreaMarket,
+                EstimatedNumberOfQueriesPerMonth = modelQPM,
+                EstimatedNumberOfQueriesPerSecond = modelQPS,
+                PleaseEnsureYourImplementationAdheresToThe = modelImpAdhereTo,
+                DataTypesToBeUsed = modelAreaDataTypes,
+                AppIdFormCode = modelFormCode,
+                TargetDevice = modelDevice,
+                OtherTargetDevice = OtherTargetDevice,
+                DetailedScenario = modelDetailedScenario,
+
+
                 email = "bpgedevops@microsoft.com",
-                Subject = "Test Mail Notification",
+                Subject = "Test Mail Please Ignore",
             };
             string jsonData = JsonConvert.SerializeObject(myData);
             JObject jsonObject = JObject.Parse(jsonData);
@@ -41,7 +76,7 @@ namespace OnBoardingForm
             }
 
 
-         
+
         }
     }
 }
