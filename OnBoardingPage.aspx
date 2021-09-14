@@ -24,36 +24,80 @@
 
     <script type="text/javascript">
         function sync() {
+
+            var modalCondition = true;
             var txtTeamName = document.getElementById('txtTeamName');
-            var modeltxtTeamName = document.getElementById('modeltxtTeamName');
-            modeltxtTeamName.value = txtTeamName.value;
-
-            var txtExternalPartner = document.getElementById('txtExternalPartner');
-            var modeltxtExternalPartnerAlias = document.getElementById('modeltxtExternalPartnerAlias');
-            modeltxtExternalPartnerAlias.value = txtExternalPartner.value;
-
+            if (txtTeamName.value == "") {
+                modalCondition = false;
+                alert('Please Enter Team Name');
+                return false;
+            }
+            else {
+                var modeltxtTeamName = document.getElementById('modeltxtTeamName');
+                modeltxtTeamName.value = txtTeamName.value;
+            }
 
             var txtPartnerContactName = document.getElementById('txtPartnerContactName');
-            var modeltxtPartnerAlias = document.getElementById('modeltxtPartnerAlias');
-            modeltxtPartnerAlias.value = txtPartnerContactName.value;
-
+            if (txtPartnerContactName.value == "") {
+                modalCondition = false;
+                alert('Please Enter Partner Contact Microsoft alias');
+                return false;
+            }
+            else {
+                var modeltxtPartnerAlias = document.getElementById('modeltxtPartnerAlias');
+                modeltxtPartnerAlias.value = txtPartnerContactName.value;
+            }
 
             var txtSearhTeamContact = document.getElementById('txtSearhTeamContact');
-            var modelSearchTxtTeamEmail = document.getElementById('modelSearchTxtTeamEmail');
-            modelSearchTxtTeamEmail.value = txtSearhTeamContact.value;
+            if (txtSearhTeamContact.value == "") {
+                modalCondition = false;
+                alert('Please Enter Search Team Contact alias');
+                return false;
+            }
+            else {
+                var modelSearchTxtTeamEmail = document.getElementById('modelSearchTxtTeamEmail');
+                modelSearchTxtTeamEmail.value = txtSearhTeamContact.value;
+            }
 
             var txtTeamAlias = document.getElementById('txtTeamAlias');
-            var modelTxtTeamEmail = document.getElementById('modelTxtTeamEmail');
-            modelTxtTeamEmail.value = txtTeamAlias.value;
+            if (txtTeamAlias.value == "") {
+                modalCondition = false;
+                alert('Please Enter Team alias');
+                return false;
+            }
+            else {
+                var modelTxtTeamEmail = document.getElementById('modelTxtTeamEmail');
+                modelTxtTeamEmail.value = txtTeamAlias.value;
+            }
+
+            var txtExternalPartner = document.getElementById('txtExternalPartner');
+            if (txtExternalPartner.value == "") {
+                modalCondition = false;
+                alert('Please Enter External partner contact email alias');
+                return false;
+            }
+            else {
+                var modeltxtExternalPartnerAlias = document.getElementById('modeltxtExternalPartnerAlias');
+                modeltxtExternalPartnerAlias.value = txtExternalPartner.value;
+            }
+
+
+           
+            
 
             var txtAreaProjectOverView = document.getElementById('txtAreaProjectOverView');
-            var modeltxtProjectOverview = document.getElementById('modeltxtProjectOverview');
-            modeltxtProjectOverview.value = txtAreaProjectOverView.value;
-
-
+            if (txtAreaProjectOverView.value == "") {
+                modalCondition = false;
+                alert('Please provide Project Overview');
+                return false;
+            }
+            else {
+                var modeltxtProjectOverview = document.getElementById('modeltxtProjectOverview');
+                modeltxtProjectOverview.value = txtAreaProjectOverView.value;
+            }
 
             var targetDevices = "";
-            if (document.getElementById("chkDeskTop").checked = true) {
+            if (document.getElementById("chkDeskTop").checked ==true) {
                 targetDevices = "Desktop";
             }
             if (document.getElementById("chkMobile").checked == true) {
@@ -62,8 +106,16 @@
             if (document.getElementById("chkotherDevice").checked == true) {
                 targetDevices = targetDevices + ',\n' + " Other Devices : \n " + document.getElementById('txtOtherDevice').value;
             }
-            var modelTargetDevice = document.getElementById('modelTargetDevice');
-            modelTargetDevice.value = targetDevices;
+
+            if (targetDevices== "") {
+                modalCondition = false;
+                alert('Please provide target device');
+                return false;
+            }
+            else {
+                var modelTargetDevice = document.getElementById('modelTargetDevice');
+                modelTargetDevice.value = targetDevices;
+            }
 
 
 
@@ -71,31 +123,17 @@
 
             var modelTxtDate = document.getElementById('modelTxtDate');
             var txtDate = document.getElementById('txtDate');
-            modelTxtDate.value = txtDate.value;
-
-            var txtAreaMarkets = document.getElementById('txtAreaMarkets');
-            var modeltxtAreaMarket = document.getElementById('modeltxtAreaMarket');
-            modeltxtAreaMarket.value = txtAreaMarkets.value;
-
-            var txtQPM = document.getElementById('txtQPM');
-            var modelTxtQPM = document.getElementById('modelTxtQPM');
-            modelTxtQPM.value = txtQPM.value;
-
-            var txtQPS = document.getElementById('txtQPS');
-            var modelTxtQPS = document.getElementById('modelTxtQPS');
-            modelTxtQPS.value = txtQPS.value;
-
-            var listConsideredDataTypes = document.getElementById('listConsideredDataTypes');
-            var modeltxtAreaDataTypes = document.getElementById('modeltxtAreaDataTypes');
-            modeltxtAreaDataTypes.value = listConsideredDataTypes.options[listConsideredDataTypes.selectedIndex].text;
-
-            var txtAreaDetailedScenario = document.getElementById('txtAreaDetailedScenario');
-            var modeltxtDetailedScenario = document.getElementById('modeltxtDetailedScenario');
-            modeltxtDetailedScenario.value = txtAreaDetailedScenario.value;
-
+            if (txtDate.value == "") {
+                modalCondition = false;
+                alert('Please provide expected project release date');
+                return false;
+            }
+            else {
+                modelTxtDate.value = txtDate.value;
+            }
 
             var distributionMethod = "";
-            if (document.getElementById("chkInternalMicrosoft").checked = true) {
+            if (document.getElementById("chkInternalMicrosoft").checked == true) {
                 distributionMethod = "Microsoft Internal user only";
             }
             if (document.getElementById("chkMicrosoftenterprise").checked == true) {
@@ -110,8 +148,60 @@
             if (document.getElementById("chkotherPackage").checked == true) {
                 distributionMethod = distributionMethod + ',\n' + "Other package distribution outside Microsoft : \n" + document.getElementById('txtOtherScenario').value;
             }
-            var modeltxtAreaDistribution = document.getElementById('modeltxtAreaDistribution');
-            modeltxtAreaDistribution.value = distributionMethod;
+            if (distributionMethod == "") {
+                modalCondition = false;
+                alert('Please specify distribution method');
+                return false;
+            }
+            else {
+                var modeltxtAreaDistribution = document.getElementById('modeltxtAreaDistribution');
+                modeltxtAreaDistribution.value = distributionMethod;
+            }
+
+            var txtAreaMarkets = document.getElementById('txtAreaMarkets');
+            if (txtAreaMarkets.value == "") {
+                modalCondition = false;
+                alert('Please provide Area or Market');
+                return false;
+            }
+            else {
+                var modeltxtAreaMarket = document.getElementById('modeltxtAreaMarket');
+                modeltxtAreaMarket.value = txtAreaMarkets.value;
+            }
+
+            var txtQPM = document.getElementById('txtQPM');
+            if (txtQPM.value == "") {
+                modalCondition = false;
+                alert('Please provide Estimateded  Query Per Month');
+                return false;
+            }
+            else {
+                var modelTxtQPM = document.getElementById('modelTxtQPM');
+                modelTxtQPM.value = txtQPM.value;
+            }
+            var txtQPS = document.getElementById('txtQPS');
+            if (txtQPS.value == "") {
+                modalCondition = false;
+                alert('Please provide Estimateded  Query Per Second');
+                return false;
+            }
+            else {
+                var modelTxtQPS = document.getElementById('modelTxtQPS');
+                modelTxtQPS.value = txtQPS.value;
+            }
+
+            var listConsideredDataTypes = document.getElementById('listConsideredDataTypes');
+            var consideredDataTypes = listConsideredDataTypes.options[listConsideredDataTypes.selectedIndex].text;
+            if (consideredDataTypes == "") {
+                modalCondition = false;
+                alert('Please provide considered Data Types');
+                return false;
+            }
+            else {
+                var modeltxtAreaDataTypes = document.getElementById('modeltxtAreaDataTypes');
+                modeltxtAreaDataTypes.value = consideredDataTypes;
+            }
+
 
             var BingProductGuideline = "";
             if (document.getElementById("rbAccept").checked == true) {
@@ -120,9 +210,30 @@
             else {
                 BingProductGuideline = "Not Accept";
             }
+            if (BingProductGuideline == "") {
+                modalCondition = false;
+                alert('Please select apropriate option for Bing Product Guideline consent');
+                return false;
+            }
+            else {
+                var modelTxtImpAdhereTo = document.getElementById('modelTxtImpAdhereTo');
+                modelTxtImpAdhereTo.value = BingProductGuideline;
+            }
 
-            var modelTxtImpAdhereTo = document.getElementById('modelTxtImpAdhereTo');
-            modelTxtImpAdhereTo.value = BingProductGuideline;
+            var AppIdPresent = "";
+            if (document.getElementById("rbAppIdYes").checked == true) {
+                AppIdPresent = "Yes";
+            }
+            else {
+                AppIdPresent = "No";
+            }
+            if (AppIdPresent == "") {
+                modalCondition = false;
+                alert('Please select YES/NO if you have AppId/Form Code');
+                return false;
+            }
+            var modelFormCode = document.getElementById('modelTxtFormCode');
+            modelFormCode.value = AppIdPresent;
 
 
             var BingAPICalledAt = "";
@@ -137,18 +248,34 @@
             else if (document.getElementById("rbOthers").checked == true) {
                 BingAPICalledAt = "Other Uses : \n" + txtOtherfield.value;
             }
-
-            IfOtherPleaseSpecify.value = BingAPICalledAt;
-
-            var AppIdPresent = ""; 
-            if (document.getElementById("rbAppIdYes").checked == true) {
-                AppIdPresent = "Yes";
+            if (BingAPICalledAt == "") {
+                modalCondition = false;
+                alert('Please select  where Bing API will be called');
+                return false;
             }
             else {
-                AppIdPresent = "No";
+                var modeltxtBingAPICalledAt = document.getElementById('modeltxtBingAPICalledAt');
+                modeltxtBingAPICalledAt.value = BingAPICalledAt;
             }
-            var modelFormCode = document.getElementById('modelTxtFormCode');
-            modelFormCode.value = AppIdPresent;
+
+
+
+            var txtAreaDetailedScenario = document.getElementById('txtAreaDetailedScenario');
+            if (txtAreaDetailedScenario.value == "") {
+                modalCondition = false;
+                alert('Please provide Detailed Scenario');
+                return false;
+            }
+            var modeltxtDetailedScenario = document.getElementById('modeltxtDetailedScenario');
+            modeltxtDetailedScenario.value = txtAreaDetailedScenario.value;
+
+
+  
+           
+            
+            if (modalCondition == true) {
+                $("#exampleModalLong").modal('show');
+            }
 
 
         }
@@ -234,7 +361,7 @@
                                     <i class="fas fa-search fa-fw"></i>
                                 </a>
                                 <!-- Dropdown - Messages -->
-                                
+
                             </li>
 
                             <!-- Nav Item - Alerts -->
@@ -296,19 +423,19 @@
 
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user"
-                                        id="txtTeamName" placeholder="Team Name & Division">
+                                        id="txtTeamName" required placeholder="Team Name & Division">
                                 </div>
 
-                                 <div class="form-group">
+                                <div class="form-group">
                                     <input type="text" class="form-control form-control-user"
                                         id="txtPartnerContactName" placeholder="Panrtner Contact Microsoft Alias">
                                 </div>
 
-                                 <div class="form-group">
+                                <div class="form-group">
                                     <input type="text" class="form-control form-control-user"
                                         id="txtSearhTeamContact" placeholder="POC Email Address (Search Team Contact)">
                                 </div>
-                                 <div class="form-group">
+                                <div class="form-group">
                                     <input type="text" class="form-control form-control-user"
                                         id="txtTeamAlias" placeholder="Team Alias Email">
                                 </div>
@@ -317,16 +444,16 @@
                                     <input type="text" class="form-control form-control-user"
                                         id="txtExternalPartner" placeholder="External partner email alias">
                                 </div>
-                               
-                               
-                               
+
+
+
                                 <div class="form-group">
 
                                     <textarea class="form-control" rows="5" placeholder="Project Overview" id="txtAreaProjectOverView"></textarea>
                                 </div>
 
 
-                                
+
                                 <div class="form-group">
                                     <div class="card shadow mb-4">
                                         <div class="card-header py-3">
@@ -342,10 +469,11 @@
                                                 <label>
                                                     <input type="checkbox" id="chkMobile" value="">Mobile</label>
                                             </div>
-                                            
+
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox" id="chkotherDevice" value="">Others Device </label>
+                                                    <input type="checkbox" id="chkotherDevice" value="">Others Device
+                                                </label>
                                             </div>
 
                                             <div class="form-group">
@@ -447,7 +575,7 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="form-group">
-                                                <a href="https://docs.microsoft.com/en-us/bing/search-apis/bing-web-search/use-display-requirements"  target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                                <a href="https://docs.microsoft.com/en-us/bing/search-apis/bing-web-search/use-display-requirements" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                                     <i class="fas fa-download fa-sm text-white-50"></i>Bing Product Guidelines
                                                 </a>
                                             </div>
@@ -476,8 +604,8 @@
                                         </div>
                                         <div class="card-body">
                                             <select class="form-select" id="listConsideredDataTypes" size="7" aria-label="size 7 select example">
-                                                <option selected>Choose Data Types</option>
-                                                <option value="1">Web</option>
+                                                <option value="" disabled="disabled">Select Data Types</option>
+                                                <option value="1" selected>Web</option>
                                                 <option value="2">Video</option>
                                                 <option value="3">Images</option>
                                                 <option value="4">Related Queries</option>
@@ -564,13 +692,10 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button type="button" class="btn btn-primary" onclick="sync()" data-toggle="modal" data-target="#exampleModalLong">
+                                <button type="button" class="btn btn-primary" onclick="return sync();" data-target="#exampleModalLong">
                                     Preview On Boarding Form
                                 </button>
-
-                            
-
-
+                                <%--data-toggle="modal"--%>
                             </div>
                         </div>
 
@@ -618,48 +743,43 @@
 
                         <div class="form-group">
                             <label for="modeltxtTeamName">Team Name & Division </label>
-                             <input type="text" class="form-control" runat="server" id="modeltxtTeamName" placeholder="....">        
+                            <input type="text" class="form-control" runat="server" id="modeltxtTeamName" placeholder="....">
                         </div>
 
                         <div class="form-group">
-                            <label for="modeltxtPartnerAlias">Partner Contact Microsoft Alias</label>                           
-                             <input type="text" class="form-control" runat="server" id="modeltxtPartnerAlias" placeholder="....">
-                          
+                            <label for="modeltxtPartnerAlias">Partner Contact Microsoft Alias</label>
+                            <input type="text" class="form-control" runat="server" id="modeltxtPartnerAlias" placeholder="....">
                         </div>
 
                         <div class="form-group">
                             <label for="modelSearchTxtTeamEmail">POC email Address (Search Team Contact)</label>
                             <input type="text" class="form-control" runat="server" id="modelSearchTxtTeamEmail" placeholder="....">
-                           
                         </div>
 
-                                 <div class="form-group">
+                        <div class="form-group">
                             <label for="modelTxtTeamEmail">Team Alias (Email)</label>
-                           
 
-                             <input type="text" class="form-control" runat="server" id="modelTxtTeamEmail" placeholder="....">
-                            
-                        </div>                 
+
+                            <input type="text" class="form-control" runat="server" id="modelTxtTeamEmail" placeholder="....">
+                        </div>
 
                         <div class="form-group">
                             <label for="modeltxtExternalPartnerAlias">External partner email alias</label>
-                            
+
                             <input type="text" class="form-control" runat="server" id="modeltxtExternalPartnerAlias" placeholder="....">
-                          
                         </div>
-                       
-                      
+
+
                         <div class="form-group">
                             <label for="modeltxtProjectOverview">Project Overview : </label>
-                            
+
                             <textarea id="modeltxtProjectOverview" runat="server" class="form-control" rows="5" placeholder="......"></textarea>
                         </div>
 
 
-                          <div class="form-group">
+                        <div class="form-group">
                             <label for="modelTargetDevice">Target Device : </label>
                             <input type="text" class="form-control" id="modelTargetDevice" runat="server" placeholder="....">
-                            
                         </div>
 
                         <div class="form-group">
@@ -701,9 +821,13 @@
 
 
 
+                         <div class="form-group">
+                            <label for="modeltxtBingAPICalledAt">Where will the Bing APIs be called ?</label>
+
+                          <input type="text" class="form-control" id="modeltxtBingAPICalledAt" runat="server" placeholder="....">
+                        </div>
 
 
-                      
 
 
                         <div class="form-group">
@@ -715,18 +839,18 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        
+
                         <asp:Button ID="btnSubmitClick" UseSubmitBehavior="false" Style="width: 40%" class="btn btn-success" runat="server" Text="Post Data" OnClick="btnSubmit_Click1" />
-                       
-                  
+
+
                     </div>
                 </div>
             </div>
         </div>
 
-         </form>
-   
-    
+    </form>
+
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -744,7 +868,7 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
-    
+
 </body>
 
 </html>
