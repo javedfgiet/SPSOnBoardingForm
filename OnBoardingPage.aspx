@@ -428,28 +428,28 @@
 
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user"
-                                        id="txtPartnerContactName" placeholder="Panrtner Contact Microsoft Alias">
+                                        id="txtPartnerContactName" required placeholder="Panrtner Contact Microsoft Alias">
                                 </div>
 
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user"
-                                        id="txtSearhTeamContact" placeholder="POC Email Address (Search Team Contact)">
+                                        id="txtSearhTeamContact" required placeholder="POC Email Address (Search Team Contact)">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user"
-                                        id="txtTeamAlias" placeholder="Team Alias Email">
+                                        id="txtTeamAlias" required placeholder="Team Alias Email">
                                 </div>
 
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user"
-                                        id="txtExternalPartner" placeholder="External partner email alias">
+                                        id="txtExternalPartner" required placeholder="External partner email alias">
                                 </div>
 
 
 
                                 <div class="form-group">
 
-                                    <textarea class="form-control" rows="5" placeholder="Project Overview" id="txtAreaProjectOverView"></textarea>
+                                    <textarea class="form-control" required rows="5" placeholder="Project Overview" id="txtAreaProjectOverView"></textarea>
                                 </div>
 
 
@@ -557,11 +557,11 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-user"
+                                                <input type="text" class="form-control form-control-user" required
                                                     id="txtQPM" placeholder="Estimate query volume per month by market">
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control form-control-user"
+                                                <input type="text" class="form-control form-control-user" required
                                                     id="txtQPS" placeholder="Estimate query volume per second to be sent to search">
                                             </div>
                                         </div>
@@ -684,7 +684,7 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="form-group">
-                                                <textarea class="form-control" rows="5" placeholder="Provide detailed scenario" id="txtAreaDetailedScenario"></textarea>
+                                                <textarea class="form-control" required rows="5" placeholder="Provide detailed scenario" id="txtAreaDetailedScenario"></textarea>
                                             </div>
                                         </div>
 
