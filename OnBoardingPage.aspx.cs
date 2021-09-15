@@ -24,7 +24,6 @@ namespace OnBoardingForm
 
         protected void btnSubmit_Click1(object sender, EventArgs e)
         {
-
             var modelTeamName = modeltxtTeamName.Value;
             var modelPartnerContactMSAlias = modeltxtPartnerAlias.Value;
             var modelTeamEmail = modelTxtTeamEmail.Value;
@@ -40,26 +39,28 @@ namespace OnBoardingForm
             var modalImpAdhereTo = modelTxtImpAdhereTo.Value;
             var modalConsideredDataTypes = modeltxtAreaDataTypes.Value;
             var modalFormCode = modelTxtFormCode.Value;
+            var AppIdDetails = modelTxtFormCodeDetail.Value;
             var modalAPIcalledAt = modeltxtBingAPICalledAt.Value;
             var modalDetailedScenario = modeltxtDetailedScenario.Value;
             var myData = new
             {
                 TeamNameNorganization = modelTeamName,
                 PartnerContactMSAlias = modelPartnerContactMSAlias,
-                TeamEmailAlias= modelTeamEmail,
-                MostSuitableIntendedUse= modalSuitableIntendedUse,
-                ExternalPartnerEmailAlias= modalExternalPartnerAlias,
-                ProjectOverview= modalProjectOverview,
-                TargetDevice=modalTargetDevice,
-                ReleaseDate=modalReleaseDate,
-                DistributionMethod=modalDistributionMethod,
-                AreaMarket=modalAreaMarket,
-                QPM=modalQPM,
-                QPS=modalQPS,
-                AdhereToBingGuideline=modalImpAdhereTo,
-                ConsideredDataTypes=modalConsideredDataTypes,
-                HaveFormCode=modalFormCode,
-                APICalledAt=modalAPIcalledAt,
+                TeamEmailAlias = modelTeamEmail,
+                MostSuitableIntendedUse = modalSuitableIntendedUse,
+                ExternalPartnerEmailAlias = modalExternalPartnerAlias,
+                ProjectOverview = modalProjectOverview,
+                TargetDevice = modalTargetDevice,
+                ReleaseDate = modalReleaseDate,
+                DistributionMethod = modalDistributionMethod,
+                AreaMarket = modalAreaMarket,
+                QPM = modalQPM,
+                QPS = modalQPS,
+                AdhereToBingGuideline = modalImpAdhereTo,
+                ConsideredDataTypes = modalConsideredDataTypes,
+                HaveFormCode = modalFormCode,
+                AppId = AppIdDetails,
+                APICalledAt =modalAPIcalledAt,
                 Top2ProjectScenarion=modalDetailedScenario,
                 email = "spbsupp@microsoft.com",
                 Subject = "Test Mail Please Ignore",

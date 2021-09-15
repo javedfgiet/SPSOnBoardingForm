@@ -246,6 +246,11 @@
             var modelFormCode = document.getElementById('modelTxtFormCode');
             modelFormCode.value = AppIdPresent;
 
+            var AppIdDetails = document.getElementById('txtAppId');
+            var modelTxtFormCodeDetail = document.getElementById('modelTxtFormCodeDetail');
+            modelTxtFormCodeDetail.value = AppIdDetails.value;
+
+
 
             var BingAPICalledAt = "";
             var txtOtherfield = document.getElementById('txtOtherfield');
@@ -700,6 +705,17 @@
                                         </label>
                                     </div>
 
+                                    <div class="form-group">
+                                                <a href="#" class="btn btn-primary btn-icon-split btn-sm">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-flag"></i>
+                                                    </span>
+                                                    <span class="text">If Yes, Provide App Id/Form Code</span>
+                                                </a>
+                                                <input type="text" class="form-control form-control-user"
+                                                    id="txtAppId" placeholder="App Id/Form Code">
+                                            </div>
+
                                 </div>
 
 
@@ -776,7 +792,7 @@
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
                            
-                            <span>Cotact SPS team for Support at <a href="#"><b>spbsupp@microsoft.com</b></a></span>
+                            <span>Contact SPS team for Support at <a href="#"><b>spbsupp@microsoft.com</b></a></span>
                         </div>
                     </div>
                 </footer>
@@ -880,6 +896,10 @@
                             <label for="modelTxtFormCode">Do you have AppId and/or Form Code ? : </label>
                             <input type="text" class="form-control" id="modelTxtFormCode" runat="server" placeholder="....">
                         </div>
+                        <div class="form-group">
+                            <label for="modelTxtFormCodeDetail">AppId and/or Form Code : </label>
+                            <input type="text" class="form-control" id="modelTxtFormCodeDetail" runat="server" placeholder="....">
+                        </div>
 
 
 
@@ -902,7 +922,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-                        <asp:Button ID="btnSubmitClick" UseSubmitBehavior="false" Style="width: 40%" class="btn btn-success" runat="server" Text="Post Data" OnClick="btnSubmit_Click1" />
+                        <asp:Button ID="btnSubmitClick" UseSubmitBehavior="false" Style="width: 40%" class="btn btn-success" runat="server" Text="Submit Details" OnClick="btnSubmit_Click1" />
 
 
                     </div>
