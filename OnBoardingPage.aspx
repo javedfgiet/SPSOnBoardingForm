@@ -22,7 +22,42 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+    <style>
+        #myProgress {
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        #myBar {
+            width: 1%;
+            height: 30px;
+            background-color: #04AA6D;
+        }
+    </style>
+
     <script type="text/javascript">
+        var i = 0;
+        function move() {
+            if (i == 0) {
+                i = 1;
+                var elem = document.getElementById("myBar");
+                var width = 1;
+                var id = setInterval(frame, 10);
+                function frame() {
+                    if (width >= 100) {
+                        clearInterval(id);
+                        i = 0;
+                    } else {
+                        width++;
+                        elem.style.width = width + "%";
+                    }
+                }
+
+               
+            }
+        }
+
+
         function sync() {
 
             var modalCondition = true;
@@ -311,7 +346,7 @@
                 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="OnBoardingPage.aspx">
                     <div class="sidebar-brand-icon rotate-n-15">
                         <img src="img/bingLogo2.png" width="35px" height="35px" alt="logo" />
-                   
+
                     </div>
                     <div class="sidebar-brand-text mx-3">Onboarding</div>
                 </a>
@@ -356,7 +391,7 @@
                     <button class="rounded-circle border-0" id="sidebarToggle"></button>
                 </div>
 
-                
+
 
             </ul>
             <!-- End of Sidebar -->
@@ -388,38 +423,37 @@
 
                             </li>
 
-                            
+
 
                             <!-- Nav Item - Messages -->
                             <li class="nav-item dropdown no-arrow mx-1">
                                 <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-envelope fa-fw"></i>
-                                    <!-- Counter - Messages -->
                                     <span class="badge badge-danger badge-counter">0</span>
                                 </a>
                                 <!-- Dropdown - Messages -->
-                                    <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="messagesDropdown">
-                                <h6 class="dropdown-header">
-                                    Support Center
+                                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                    aria-labelledby="messagesDropdown">
+                                    <h6 class="dropdown-header">Support Center
                                 </h6>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
-                                            alt="...">
-                                        <div class="status-indicator bg-success"></div>
-                                    </div>
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate">
-                                           spbsupp@microsoft.com.</div>
-                                        <div class="small text-gray-500">Conatct for support</div>
-                                    </div>
-                                </a>
-                                
-                               
-                             
-                            </div>
+                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                        <div class="dropdown-list-image mr-3">
+                                            <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                                                alt="...">
+                                            <div class="status-indicator bg-success"></div>
+                                        </div>
+                                        <div class="font-weight-bold">
+                                            <div class="text-truncate">
+                                                spbsupp@microsoft.com.
+                                            </div>
+                                            <div class="small text-gray-500">Conatct for support</div>
+                                        </div>
+                                    </a>
+
+
+
+                                </div>
                             </li>
 
                             <div class="topbar-divider d-none d-sm-block"></div>
@@ -706,15 +740,15 @@
                                     </div>
 
                                     <div class="form-group">
-                                                <a href="#" class="btn btn-primary btn-icon-split btn-sm">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-flag"></i>
-                                                    </span>
-                                                    <span class="text">If Yes, Provide App Id/Form Code</span>
-                                                </a>
-                                                <input type="text" class="form-control form-control-user"
-                                                    id="txtAppId" placeholder="App Id/Form Code">
-                                            </div>
+                                        <a href="#" class="btn btn-primary btn-icon-split btn-sm">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-flag"></i>
+                                            </span>
+                                            <span class="text">If Yes, Provide App Id/Form Code</span>
+                                        </a>
+                                        <input type="text" class="form-control form-control-user"
+                                            id="txtAppId" placeholder="App Id/Form Code">
+                                    </div>
 
                                 </div>
 
@@ -791,7 +825,7 @@
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                           
+
                             <span>Contact SPS team for Support at <a href="#"><b>spbsupp@microsoft.com</b></a></span>
                         </div>
                     </div>
@@ -917,15 +951,18 @@
                             <textarea id="modeltxtDetailedScenario" class="form-control" runat="server" rows="5" placeholder="......"></textarea>
                         </div>
 
+                         <div id="myProgress">
+                        <div id="myBar"></div>
+                    </div>
 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                        <asp:Button ID="btnSubmitClick" UseSubmitBehavior="false" Style="width: 40%" class="btn btn-success" runat="server" Text="Submit Details" OnClick="btnSubmit_Click1" />
-
-
+                        <asp:Button ID="btnSubmitClick" UseSubmitBehavior="false" Style="width: 40%" class="btn btn-success" OnClientClick="move();" runat="server" Text="Submit Details" OnClick="btnSubmit_Click1" />
                     </div>
+
+                   
+
                 </div>
             </div>
         </div>
