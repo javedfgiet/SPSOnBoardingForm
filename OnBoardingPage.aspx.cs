@@ -62,7 +62,7 @@ namespace OnBoardingForm
                 AppId = AppIdDetails,
                 APICalledAt =modalAPIcalledAt,
                 Top2ProjectScenarion=modalDetailedScenario,
-                email = "v-jaahma@microsoft.com",
+                email = "spbsupp@microsoft.com",
                 Subject = "Test Mail Please Ignore",
             };
             string jsonData = JsonConvert.SerializeObject(myData);
