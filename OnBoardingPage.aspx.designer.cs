@@ -42,15 +42,6 @@ namespace OnBoardingForm
         protected global::System.Web.UI.HtmlControls.HtmlInputText modeltxtPartnerAlias;
 
         /// <summary>
-        /// modelSearchTxtTeamEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText modelSearchTxtTeamEmail;
-
-        /// <summary>
         /// modelTxtTeamEmail control.
         /// </summary>
         /// <remarks>
@@ -58,6 +49,15 @@ namespace OnBoardingForm
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText modelTxtTeamEmail;
+
+        /// <summary>
+        /// txtSuitabeUse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtSuitabeUse;
 
         /// <summary>
         /// modeltxtExternalPartnerAlias control.

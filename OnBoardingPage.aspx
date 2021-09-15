@@ -48,17 +48,6 @@
                 modeltxtPartnerAlias.value = txtPartnerContactName.value;
             }
 
-            var txtSearhTeamContact = document.getElementById('txtSearhTeamContact');
-            if (txtSearhTeamContact.value == "") {
-                modalCondition = false;
-                alert('Please Enter Search Team Contact alias');
-                return false;
-            }
-            else {
-                var modelSearchTxtTeamEmail = document.getElementById('modelSearchTxtTeamEmail');
-                modelSearchTxtTeamEmail.value = txtSearhTeamContact.value;
-            }
-
             var txtTeamAlias = document.getElementById('txtTeamAlias');
             if (txtTeamAlias.value == "") {
                 modalCondition = false;
@@ -70,8 +59,30 @@
                 modelTxtTeamEmail.value = txtTeamAlias.value;
             }
 
+
+
+            var APIIntendedUse = "";
+            if (document.getElementById("rbInternalMicrosoft").checked == true) {
+                APIIntendedUse = "Internal Microsoft users only";
+            }
+            else if (document.getElementById("rbExternalThirdPartyProduct").checked == true) {
+                BingProductGuideline = "External third party product users";
+            }
+            else if (document.getElementById("rbMicrosoftProductForExternalUse").checked == true) {
+                APIIntendedUse = "Microsoft product for external users";
+            }
+            if (APIIntendedUse == "") {
+                modalCondition = false;
+                alert('Please select What is the most suitable intended use ?');
+                return false;
+            }
+            else {
+                var txtSuitabeUse = document.getElementById('txtSuitabeUse');
+                txtSuitabeUse.value = APIIntendedUse;
+            }
+
             var txtExternalPartner = document.getElementById('txtExternalPartner');
-            if (txtExternalPartner.value == "") {
+            if (document.getElementById("rbMicrosoftProductForExternalUse").checked == true && txtExternalPartner.value == "") {
                 modalCondition = false;
                 alert('Please Enter External partner contact email alias');
                 return false;
@@ -82,8 +93,8 @@
             }
 
 
-           
-            
+
+
 
             var txtAreaProjectOverView = document.getElementById('txtAreaProjectOverView');
             if (txtAreaProjectOverView.value == "") {
@@ -97,7 +108,7 @@
             }
 
             var targetDevices = "";
-            if (document.getElementById("chkDeskTop").checked ==true) {
+            if (document.getElementById("chkDeskTop").checked == true) {
                 targetDevices = "Desktop";
             }
             if (document.getElementById("chkMobile").checked == true) {
@@ -107,7 +118,7 @@
                 targetDevices = targetDevices + ',\n' + " Other Devices : \n " + document.getElementById('txtOtherDevice').value;
             }
 
-            if (targetDevices== "") {
+            if (targetDevices == "") {
                 modalCondition = false;
                 alert('Please provide target device');
                 return false;
@@ -270,9 +281,9 @@
             modeltxtDetailedScenario.value = txtAreaDetailedScenario.value;
 
 
-  
-           
-            
+
+
+
             if (modalCondition == true) {
                 $("#exampleModalLong").modal('show');
             }
@@ -292,9 +303,10 @@
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="OnBoardingPage.aspx">
                     <div class="sidebar-brand-icon rotate-n-15">
-                        <i class="fas fa-laugh-wink"></i>
+                        <img src="img/bingLogo2.png" width="35px" height="35px" alt="logo" />
+                   
                     </div>
                     <div class="sidebar-brand-text mx-3">Onboarding</div>
                 </a>
@@ -304,7 +316,7 @@
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="OnBoardingPage.aspx">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Dashboard</span>
                     </a>
@@ -321,11 +333,17 @@
                 <!-- Nav Item - Pages Collapse Menu -->
                 <!-- Nav Item - Tables -->
                 <li class="nav-item">
-                    <a class="nav-link" href="tables.html">
+                    <a class="nav-link" href="OnBoardingPage.aspx">
                         <i class="fas fa-fw fa-table"></i>
                         <span>On Boarding</span>
                     </a>
                 </li>
+
+
+
+
+
+
 
                 <hr class="sidebar-divider d-none d-md-block">
 
@@ -333,6 +351,7 @@
                     <button class="rounded-circle border-0" id="sidebarToggle"></button>
                 </div>
 
+                
 
             </ul>
             <!-- End of Sidebar -->
@@ -364,17 +383,7 @@
 
                             </li>
 
-                            <!-- Nav Item - Alerts -->
-                            <li class="nav-item dropdown no-arrow mx-1">
-                                <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fas fa-bell fa-fw"></i>
-                                    <!-- Counter - Alerts -->
-                                    <span class="badge badge-danger badge-counter">3+</span>
-                                </a>
-                                <!-- Dropdown - Alerts -->
-
-                            </li>
+                            
 
                             <!-- Nav Item - Messages -->
                             <li class="nav-item dropdown no-arrow mx-1">
@@ -382,10 +391,30 @@
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-envelope fa-fw"></i>
                                     <!-- Counter - Messages -->
-                                    <span class="badge badge-danger badge-counter">7</span>
+                                    <span class="badge badge-danger badge-counter">0</span>
                                 </a>
                                 <!-- Dropdown - Messages -->
-
+                                    <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="messagesDropdown">
+                                <h6 class="dropdown-header">
+                                    Support Center
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                                            alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">
+                                           spbsupp@microsoft.com.</div>
+                                        <div class="small text-gray-500">Conatct for support</div>
+                                    </div>
+                                </a>
+                                
+                               
+                             
+                            </div>
                             </li>
 
                             <div class="topbar-divider d-none d-sm-block"></div>
@@ -394,7 +423,7 @@
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Javed Ahmad</span>
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Search Partner</span>
                                     <img class="img-profile rounded-circle"
                                         src="img/undraw_profile.svg">
                                 </a>
@@ -423,32 +452,56 @@
 
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user"
-                                        id="txtTeamName" required placeholder="Team Name & Division">
+                                        id="txtTeamName" required placeholder="Team Name & Organization">
                                 </div>
 
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user"
                                         id="txtPartnerContactName" required placeholder="Panrtner Contact Microsoft Alias">
                                 </div>
-
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-user"
-                                        id="txtSearhTeamContact" required placeholder="POC Email Address (Search Team Contact)">
-                                </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user"
                                         id="txtTeamAlias" required placeholder="Team Alias Email">
                                 </div>
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">What is the most suitable intended use ? </h6>
+                                    </div>
+                                    <div class="card-body">
 
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-user"
-                                        id="txtExternalPartner" required placeholder="External partner email alias">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="MostSuitableUse" id="rbInternalMicrosoft">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                Internal Microsoft users only 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="MostSuitableUse" id="rbExternalThirdPartyProduct" checked>
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                External third party product users 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="MostSuitableUse" id="rbMicrosoftProductForExternalUse" checked>
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                Microsoft product for external users
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <a href="#" class="btn btn-primary btn-icon-split btn-sm">
+                                                <span class="icon text-white-50">
+                                                    <i class="fas fa-flag"></i>
+                                                </span>
+                                                <span class="text">External Partner Email Alias(If Intended user is External)</span>
+                                            </a>
+                                            <input type="text" class="form-control form-control-user"
+                                                id="txtExternalPartner" required placeholder="External partner email alias">
+                                        </div>
+                                    </div>
                                 </div>
 
-
-
                                 <div class="form-group">
-
                                     <textarea class="form-control" required rows="5" placeholder="Project Overview" id="txtAreaProjectOverView"></textarea>
                                 </div>
 
@@ -546,8 +599,10 @@
                                     </div>
                                 </div>
 
+
+
                                 <div class="form-group">
-                                    <textarea class="form-control" id="txtAreaMarkets" rows="5" placeholder="List the Markets/countries where Bing results will be shown"></textarea>
+                                    <textarea class="form-control" id="txtAreaMarkets" rows="5" placeholder="List the top 5 Markets/countries where Bing results will be shown "></textarea>
                                 </div>
 
                                 <div class="form-group">
@@ -563,6 +618,18 @@
                                             <div class="form-group">
                                                 <input type="text" class="form-control form-control-user" required
                                                     id="txtQPS" placeholder="Estimate query volume per second to be sent to search">
+                                            </div>
+
+
+
+                                            <div class="card mb-4 py-3 border-left-danger">
+                                                <h6 class="m-0 font-weight-bold text-info">QPS Calculation Formulae :<small><b>(Refer formulae to calulate QPS)</b></small> </h6>
+                                                <div class="card-body text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                    <p class="text-right">QPS= ((Total number of estimated queries Per Month)/(30*(x)*60*60))*1.5 </p>
+                                                    <p class="text-right">Where x could be 24, 16, 8 depending upon time zone of the targeted market(s)market we want to cater.</p>
+                                                    <p class="text-right">E.g: US market only;  x=8; US + European market; x=16; And US+ European + Asian market; x=24.; </p>
+                                                    <p class="text-right"><b>1.5 multiplication factor = Add 50% buffer capacity. </b></p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -680,11 +747,11 @@
                                 <div class="form-group">
                                     <div class="card shadow mb-4">
                                         <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-primary">Detailed Scenario</h6>
+                                            <h6 class="m-0 font-weight-bold text-primary">Please mention your top 2 product scenarios</h6>
                                         </div>
                                         <div class="card-body">
                                             <div class="form-group">
-                                                <textarea class="form-control" required rows="5" placeholder="Provide detailed scenario" id="txtAreaDetailedScenario"></textarea>
+                                                <textarea class="form-control" required rows="5" placeholder="Pls mention your top 2 product scenarios" id="txtAreaDetailedScenario"></textarea>
                                             </div>
                                         </div>
 
@@ -708,7 +775,8 @@
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Your Website 2021</span>
+                           
+                            <span>Cotact SPS team for Support at <a href="#"><b>spbsupp@microsoft.com</b></a></span>
                         </div>
                     </div>
                 </footer>
@@ -742,7 +810,7 @@
 
 
                         <div class="form-group">
-                            <label for="modeltxtTeamName">Team Name & Division </label>
+                            <label for="modeltxtTeamName">Team Name & Organization </label>
                             <input type="text" class="form-control" runat="server" id="modeltxtTeamName" placeholder="....">
                         </div>
 
@@ -752,20 +820,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="modelSearchTxtTeamEmail">POC email Address (Search Team Contact)</label>
-                            <input type="text" class="form-control" runat="server" id="modelSearchTxtTeamEmail" placeholder="....">
-                        </div>
-
-                        <div class="form-group">
                             <label for="modelTxtTeamEmail">Team Alias (Email)</label>
-
-
                             <input type="text" class="form-control" runat="server" id="modelTxtTeamEmail" placeholder="....">
                         </div>
 
                         <div class="form-group">
+                            <label for="modeltxtExternalPartnerAlias">What is the most suitable intended use ?</label>
+                            <input type="text" class="form-control" runat="server" id="txtSuitabeUse" placeholder="....">
                             <label for="modeltxtExternalPartnerAlias">External partner email alias</label>
-
                             <input type="text" class="form-control" runat="server" id="modeltxtExternalPartnerAlias" placeholder="....">
                         </div>
 
@@ -821,10 +883,10 @@
 
 
 
-                         <div class="form-group">
+                        <div class="form-group">
                             <label for="modeltxtBingAPICalledAt">Where will the Bing APIs be called ?</label>
 
-                          <input type="text" class="form-control" id="modeltxtBingAPICalledAt" runat="server" placeholder="....">
+                            <input type="text" class="form-control" id="modeltxtBingAPICalledAt" runat="server" placeholder="....">
                         </div>
 
 

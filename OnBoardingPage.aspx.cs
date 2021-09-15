@@ -26,44 +26,42 @@ namespace OnBoardingForm
         {
 
             var modelTeamName = modeltxtTeamName.Value;
-            var modelUserName = modeltxtExternalPartnerAlias.Value;
-            var modelPartnerAlias = modeltxtPartnerAlias.Value;
-            var modelSearchTeamEmail = modelSearchTxtTeamEmail.Value;
+            var modelPartnerContactMSAlias = modeltxtPartnerAlias.Value;
             var modelTeamEmail = modelTxtTeamEmail.Value;
-            var modelProjectOverview = modeltxtProjectOverview.Value;
-            var modelDate = modelTxtDate.Value;
-            var modelAreaDistribution = modeltxtAreaDistribution.Value;
-            var modelAreaMarket = modeltxtAreaMarket.Value;
-            var modelQPM = modelTxtQPM.Value;
-            var modelQPS = modelTxtQPS.Value;
-            var modelImpAdhereTo = modelTxtImpAdhereTo.Value;
-            var modelAreaDataTypes = modeltxtAreaDataTypes.Value;
-            var modelFormCode = modelTxtFormCode.Value;
-            var modelDevice = modelTargetDevice.Value;
-           
-            var modelDetailedScenario = modeltxtDetailedScenario.Value;
+            var modalSuitableIntendedUse = txtSuitabeUse.Value;
+            var modalExternalPartnerAlias = modeltxtExternalPartnerAlias.Value;
+            var modalProjectOverview = modeltxtProjectOverview.Value;
+            var modalTargetDevice = modelTargetDevice.Value;
+            var modalReleaseDate = modelTxtDate.Value;
+            var modalDistributionMethod = modeltxtAreaDistribution.Value;
+            var modalAreaMarket = modeltxtAreaMarket.Value;
+            var modalQPM = modelTxtQPM.Value;
+            var modalQPS = modelTxtQPS.Value;
+            var modalImpAdhereTo = modelTxtImpAdhereTo.Value;
+            var modalConsideredDataTypes = modeltxtAreaDataTypes.Value;
+            var modalFormCode = modelTxtFormCode.Value;
+            var modalAPIcalledAt = modeltxtBingAPICalledAt.Value;
+            var modalDetailedScenario = modeltxtDetailedScenario.Value;
             var myData = new
             {
-                TeamName = modelTeamName,
-                UserName = modelUserName,
-                PartnerContactAlias = modelPartnerAlias,
-                SearchTeamContactAlias = modelSearchTeamEmail,
-                TeamAlias = modelTeamEmail,
-                ProjectOverview = modelProjectOverview,
-                Date = modelDate,
-                distributionMethod = modelAreaDistribution,
-                MarketNcountries = modelAreaMarket,
-                EstimatedNumberOfQueriesPerMonth = modelQPM,
-                EstimatedNumberOfQueriesPerSecond = modelQPS,
-                PleaseEnsureYourImplementationAdheresToThe = modelImpAdhereTo,
-                DataTypesToBeUsed = modelAreaDataTypes,
-                AppIdFormCode = modelFormCode,
-                TargetDevice = modelDevice,
-                OtherTargetDevice = modelDevice,
-                DetailedScenario = modelDetailedScenario,
-
-
-                email = "bpgedevops@microsoft.com",
+                TeamNameNorganization = modelTeamName,
+                PartnerContactMSAlias = modelPartnerContactMSAlias,
+                TeamEmailAlias= modelTeamEmail,
+                MostSuitableIntendedUse= modalSuitableIntendedUse,
+                ExternalPartnerEmailAlias= modalExternalPartnerAlias,
+                ProjectOverview= modalProjectOverview,
+                TargetDevice=modalTargetDevice,
+                ReleaseDate=modalReleaseDate,
+                DistributionMethod=modalDistributionMethod,
+                AreaMarket=modalAreaMarket,
+                QPM=modalQPM,
+                QPS=modalQPS,
+                AdhereToBingGuideline=modalImpAdhereTo,
+                ConsideredDataTypes=modalConsideredDataTypes,
+                HaveFormCode=modalFormCode,
+                APICalledAt=modalAPIcalledAt,
+                Top2ProjectScenarion=modalDetailedScenario,
+                email = "spbsupp@microsoft.com",
                 Subject = "Test Mail Please Ignore",
             };
             string jsonData = JsonConvert.SerializeObject(myData);
