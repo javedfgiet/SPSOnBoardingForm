@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using Google.Api;
+using Microsoft.Graph;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -17,13 +19,14 @@ namespace OnBoardingForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //https://www.c-sharpcorner.com/article/write-your-first-program-using-microsoft-graph-sdk/
         }
 
 
 
         protected void btnSubmit_Click1(object sender, EventArgs e)
         {
+            // Code Reponsible for generating Email..
             try
             {
                 var modelTeamName = modeltxtTeamName.Value;
